@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelatihan K3 Kemnaker RI | Business</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="icon" href="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/cropped-logo-transparant-1-32x32.png" sizes="32x32" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --yellow:#f5a623;
+  --yellow2:#e8a000;
+  --navy:#1a2e5a;
+  --navy2:#0f1e3d;
+  --white:#fff;
+  --gray:#f7f8fa;
+  --border:#e5e7eb;
+  --text:#333;
+  --text2:#555;
+}
+body{font-family:'Inter',sans-serif;color:var(--text);font-size:15px;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;height:auto;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* ===== TOP BAR ===== */
+#top-bar{background:var(--navy);color:#fff;font-size:12.5px;padding:7px 0;}
+#top-bar .inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+#top-bar .left{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+#top-bar .left span{color:rgba(255,255,255,.8);display:flex;align-items:center;gap:5px;}
+#top-bar .right{display:flex;align-items:center;gap:16px;}
+#top-bar .right a{color:rgba(255,255,255,.8);display:flex;align-items:center;gap:5px;}
+#top-bar .right a:hover{color:var(--yellow);}
+#top-bar i{color:var(--yellow);}
+
+/* ===== HEADER ===== */
+#site-header{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.09);position:sticky;top:0;z-index:1000;}
+.header-wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:10px;}
+.site-logo a{display:block;}
+.site-logo img{height:56px;width:auto;display:block;}
+
+/* Primary Nav */
+#primary-nav{display:flex;align-items:center;}
+#primary-nav>ul{list-style:none;display:flex;align-items:center;margin:0;padding:0;}
+#primary-nav>ul>li{position:relative;}
+#primary-nav>ul>li>a{
+  display:flex;align-items:center;gap:4px;
+  padding:10px 13px;font-size:13px;font-weight:600;
+  color:var(--text);white-space:nowrap;border-radius:4px;transition:.15s;
+}
+#primary-nav>ul>li>a:hover{color:var(--yellow2);}
+#primary-nav>ul>li>a .fa-chevron-down{font-size:9px;opacity:.55;}
+
+/* Dropdown level 1 */
+.sub-menu{
+  display:none;position:absolute;top:100%;left:0;
+  background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.13);
+  border-top:3px solid var(--yellow);border-radius:0 0 8px 8px;
+  min-width:240px;list-style:none;z-index:999;padding:6px 0;
+}
+#primary-nav>ul>li:hover>.sub-menu{display:block;}
+.sub-menu>li{position:relative;}
+.sub-menu>li>a{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:9px 18px;font-size:13px;color:var(--text);transition:.15s;
+}
+.sub-menu>li>a:hover{background:#fef9ec;color:var(--yellow2);padding-left:22px;}
+.sub-menu>li>a .fa-chevron-right{font-size:9px;opacity:.45;}
+
+/* Dropdown level 2 */
+.sub-sub-menu{
+  display:none;position:absolute;top:0;left:100%;
+  background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.13);
+  border-top:3px solid var(--yellow);border-radius:0 0 8px 8px;
+  min-width:270px;list-style:none;z-index:1000;padding:6px 0;
+}
+.sub-menu>li:hover>.sub-sub-menu{display:block;}
+.sub-sub-menu>li>a{
+  display:block;padding:9px 18px;font-size:13px;color:var(--text);transition:.15s;
+}
+.sub-sub-menu>li>a:hover{background:#fef9ec;color:var(--yellow2);padding-left:22px;}
+
+/* Header right */
+.header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.btn-daftar{
+  background:var(--yellow);color:#fff!important;padding:10px 18px;
+  border-radius:6px;font-weight:700;font-size:13px;
+  white-space:nowrap;transition:.2s;display:inline-block;
+}
+.btn-daftar:hover{background:#d4910a;}
+.search-wrap{display:flex;align-items:center;gap:6px;border:1.5px solid var(--border);border-radius:6px;padding:8px 11px;font-size:13px;color:var(--text2);cursor:pointer;}
+.search-wrap:hover{border-color:var(--yellow);}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+.menu-toggle span{display:block;width:23px;height:2px;background:var(--text);margin:5px 0;border-radius:2px;transition:.2s;}
+
+/* ===== HERO ===== */
+#hero{
+  background:linear-gradient(115deg,#0c1c42 0%,#163162 45%,#1c4080 100%);
+  color:#fff;padding:70px 0 60px;position:relative;overflow:hidden;
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 0,transparent 50%);
+  background-size:28px 28px;
+}
+.hero-inner{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1;}
+.hero-text .welcome-txt{font-size:14px;font-weight:700;opacity:.65;margin-bottom:8px;display:block;letter-spacing:.3px;}
+.hero-text h1{font-size:38px;font-weight:800;line-height:1.22;margin-bottom:18px;}
+.hero-text h1 .hl{color:var(--yellow);}
+.hero-text .hero-desc{font-size:15.5px;opacity:.85;max-width:500px;margin-bottom:32px;line-height:1.78;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-hp{background:var(--yellow);color:#fff;padding:13px 26px;border-radius:8px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:.2s;}
+.btn-hp:hover{background:#d4910a;}
+.btn-hs{background:transparent;color:#fff;padding:13px 26px;border-radius:8px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,.38);transition:.2s;}
+.btn-hs:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7);}
+.hero-trusted{margin-top:36px;}
+.hero-trusted p{font-size:12.5px;opacity:.6;margin-bottom:12px;font-style:italic;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.stat-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:15px 10px;text-align:center;}
+.stat-box .num{font-size:24px;font-weight:800;color:var(--yellow);}
+.stat-box .lbl{font-size:11px;opacity:.65;margin-top:3px;line-height:1.4;}
+/* Hero right side */
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.hero-img-main{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.15);}
+.hero-img-main img{width:100%;display:block;height:220px;object-fit:cover;}
+
+/* ===== SECTIONS ===== */
+section{padding:64px 0;}
+.sec-label{color:var(--yellow2);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;}
+.sec-title{font-size:29px;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:12px;}
+.sec-desc{color:var(--text2);font-size:15px;line-height:1.72;max-width:600px;}
+.sec-center{text-align:center;}
+.sec-center .sec-desc{margin:0 auto;}
+
+/* ===== LAYANAN ===== */
+#layanan{background:var(--gray);}
+.layanan-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px;flex-wrap:wrap;gap:20px;}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.service-card{
+  background:#fff;border-radius:12px;padding:26px 22px;
+  border:1px solid var(--border);transition:.25s;position:relative;
+}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--yellow);transform:scaleX(0);transition:.3s;transform-origin:left;border-radius:0 0 12px 12px;}
+.service-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.1);transform:translateY(-4px);}
+.service-card:hover::after{transform:scaleX(1);}
+.service-icon{font-size:34px;margin-bottom:13px;}
+.service-card h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.service-card p{font-size:13.5px;color:var(--text2);line-height:1.7;margin-bottom:16px;}
+.service-link{color:var(--yellow2);font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:5px;transition:.2s;}
+.service-link:hover{gap:9px;}
+.layanan-actions{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap;}
+.btn-y{background:var(--yellow);color:#fff;padding:13px 24px;border-radius:8px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:7px;transition:.2s;}
+.btn-y:hover{background:#d4910a;}
+.btn-on{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:12px 22px;border-radius:8px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:7px;transition:.2s;}
+.btn-on:hover{background:var(--navy);color:#fff;}
+.trainer-img{margin-top:38px;border-radius:12px;overflow:hidden;max-height:280px;}
+.trainer-img img{width:100%;height:280px;object-fit:cover;display:block;}
+
+/* ===== KENAPA ===== */
+#kenapa{background:#fff;}
+.kenapa-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.kenapa-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;}
+.feat-box{background:var(--gray);border-radius:10px;padding:20px;border-left:4px solid var(--yellow);}
+.feat-box h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.feat-box h4 a{color:var(--navy);}
+.feat-box h4 a:hover{color:var(--yellow2);}
+.feat-box p{font-size:13px;color:var(--text2);line-height:1.65;}
+.kenapa-right img{width:100%;border-radius:16px;display:block;}
+
+/* CTA strip */
+.cta-strip{background:linear-gradient(90deg,var(--yellow) 0%,#f9c040 100%);padding:42px 0;}
+.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.cta-inner h2{font-size:22px;font-weight:800;color:var(--navy2);}
+.cta-inner h2 a{color:var(--navy2);}
+.btn-n{background:var(--navy);color:#fff;padding:13px 26px;border-radius:8px;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;transition:.2s;white-space:nowrap;}
+.btn-n:hover{background:var(--navy2);}
+
+/* ===== MANFAAT ===== */
+#manfaat{background:var(--gray);}
+.manfaat-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.manfaat-list{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:26px;}
+.manfaat-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:11px 14px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;}
+.manfaat-item .chk{width:22px;height:22px;background:var(--yellow);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:11px;font-weight:800;}
+.manfaat-item a{color:var(--text);}
+.manfaat-item a:hover{color:var(--yellow2);}
+.manfaat-img img{width:100%;border-radius:16px;display:block;}
+/* Video grid */
+.video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:40px;}
+.video-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.video-thumb{background:linear-gradient(135deg,var(--navy),#1a3a6b);height:110px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:34px;position:relative;cursor:pointer;}
+.play-btn{position:absolute;width:40px;height:40px;background:rgba(255,255,255,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:14px;}
+.video-label{padding:10px 12px;font-size:12.5px;font-weight:600;color:var(--text);line-height:1.5;}
+
+/* ===== TESTIMONI ===== */
+#testimoni{background:#fff;}
+.g-header{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:8px;margin-bottom:2px;}
+.g-ball{width:28px;height:28px;background:#fff;border-radius:50%;box-shadow:0 1px 5px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#4285f4;}
+.g-text{font-size:13.5px;color:var(--text2);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:32px;}
+.review-card{background:var(--gray);border-radius:10px;padding:20px;border:1px solid var(--border);}
+.review-stars{color:#f5a623;font-size:14px;letter-spacing:1px;margin-bottom:8px;}
+.review-text{font-size:13.5px;color:var(--text);line-height:1.7;margin-bottom:14px;}
+.review-foot{display:flex;align-items:center;gap:10px;}
+.r-avatar{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.r-name{font-size:13px;font-weight:700;}
+.r-src{font-size:11.5px;color:var(--text2);}
+
+/* ===== CLIENTS ===== */
+#clients{background:var(--gray);padding:50px 0;}
+.clients-logos{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-top:30px;}
+.client-logo{background:#fff;border:1px solid var(--border);border-radius:10px;padding:13px 20px;height:68px;display:flex;align-items:center;justify-content:center;min-width:110px;transition:.2s;}
+.client-logo:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px);}
+.client-logo img{max-height:40px;max-width:110px;object-fit:contain;filter:grayscale(20%);}
+.client-logo:hover img{filter:none;}
+
+/* ===== CTA BOTTOM ===== */
+#cta-bottom{background:linear-gradient(135deg,var(--navy) 0%,#0e1f40 100%);color:#fff;padding:60px 0;text-align:center;}
+#cta-bottom h2{font-size:28px;font-weight:800;margin-bottom:12px;}
+#cta-bottom p{font-size:15.5px;opacity:.8;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;}
+
+/* ===== FOOTER ===== */
+#footer{background:#0d1a35;color:#fff;padding:50px 0 0;}
+.footer-grid{display:grid;grid-template-columns:2.3fr 1fr 1fr 1.3fr;gap:38px;}
+.footer-logo-img{height:44px;width:auto;filter:brightness(0) invert(1);opacity:.88;display:block;margin-bottom:16px;}
+.footer-contacts{display:flex;flex-direction:column;gap:9px;}
+.footer-contact-row{display:flex;align-items:flex-start;gap:8px;font-size:13px;opacity:.7;line-height:1.6;}
+.footer-contact-row i{color:var(--yellow);flex-shrink:0;margin-top:3px;}
+.footer-col h4{font-size:13px;font-weight:700;color:var(--yellow);margin-bottom:13px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.footer-col ul li a{font-size:13px;opacity:.65;transition:.2s;}
+.footer-col ul li a:hover{opacity:1;color:var(--yellow);padding-left:4px;}
+.footer-reg img{max-height:34px;filter:brightness(0) invert(1);opacity:.55;margin-top:4px;}
+.footer-visit img{max-height:28px;filter:brightness(0) invert(1);opacity:.6;margin-top:6px;}
+.footer-partners{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.footer-partners img{max-height:30px;filter:brightness(0) invert(1);opacity:.55;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding:18px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12.5px;opacity:.5;}
+
+/* WhatsApp Float */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:9999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);font-size:26px;transition:.2s;}
+.wa-float:hover{transform:scale(1.1);}
+
+/* Responsive */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .kenapa-grid,.manfaat-grid{grid-template-columns:1fr;}
+  .kenapa-right,.manfaat-img{display:none;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  #primary-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:9999;flex-direction:column;align-items:flex-start;}
+  #primary-nav.open{display:flex;}
+  #primary-nav>ul{flex-direction:column;width:100%;gap:0;}
+  .sub-menu,.sub-sub-menu{position:static;box-shadow:none;border-top:none;border-left:3px solid var(--yellow);margin-left:16px;display:none!important;}
+  .menu-toggle{display:block;}
+  .service-grid{grid-template-columns:1fr 1fr;}
+  .kenapa-features{grid-template-columns:1fr;}
+  .manfaat-list{grid-template-columns:1fr;}
+  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .video-grid{grid-template-columns:1fr 1fr;}
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  #top-bar{display:none;}
+  .hero-text h1{font-size:27px;}
+  .sec-title{font-size:23px;}
+  .service-grid{grid-template-columns:1fr;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .video-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div id="top-bar">
+  <div class="container">
+    <div class="inner">
+      <div class="left">
+        <span><i class="fa fa-map-marker-alt"></i>sebrang KONI, Jl. Gelatik Raya No.107, Depok Jaya, Kec. Pancoran Mas, Kota Depok, Jawa Barat 16432</span>
+        <span><i class="fa fa-clock"></i>Senin - Jumat: 08.00 - 17.00 &nbsp;|&nbsp; Sabtu: 08.00 - 12.00</span>
+      </div>
+      <div class="right">
+        <a href="mailto:marketing@mandirimahadaya.co.id"><i class="fa fa-envelope"></i>marketing@mandirimahadaya.co.id</a>
+        <a href="tel:02122910842"><i class="fa fa-phone"></i>Hotline : (021) 2291 0842</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-wrap">
+
+      <!-- Logo -->
+      <div class="site-logo">
+        <a href="#">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/logo-mandiri-maha-daya.webp"
+               alt="logo mandiri maha daya"
+               height="56">
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="primary-nav">
+        <ul>
+          <!-- Pelatihan K3 Kemnaker -->
+          <li>
+            <a href="#">Pelatihan K3 Kemnaker <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">Keselamatan Kerja <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-ahli-k3-umum-kemnaker/">Pelatihan Ahli K3 Umum Kemnaker Online dan Offline</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-p3k-kemnaker/">Pelatihan P3K Bersertifikasi KEMNAKER RI</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Ketinggian <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="#" style="font-weight:600;color:var(--text2);">Pelatihan TKPK</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkpk-1-kemnaker/">&nbsp;&nbsp;Pelatihan TKPK 1 Sertifikasi KEMNAKER RI</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkpk-2-sertifikasi-kemnaker-ri/">&nbsp;&nbsp;Pelatihan TKPK 2 Sertifikasi KEMNAKER RI</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkpk-3-sertifikasi-kemnaker-ri/">&nbsp;&nbsp;Pelatihan TKPK 3 Sertifikasi KEMNAKER RI</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkbt-2-kemnaker/">Pelatihan TKBT 2 Sertifikasi KEMNAKER</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Pesawat Angkat Angkut <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-operator-gondola-kemnaker-ri/">Pelatihan Operator Gondola Kemnaker RI</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-operator-crane-bersertifikasi-kemnaker/">Pelatihan K3 Operator Crane Bersertifikasi Kemnaker</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-operator-grider-bersertifikasi-kemnaker/">Pelatihan K3 Operator Grider Bersertifikasi Kemnaker</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-operator-excavator-bersertifikasi-kemnaker/">Pelatihan K3 Operator Excavator Bersertifikasi Kemnaker</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-operator-forklift-kemnaker/">Pelatihan Operator Forklift Kelas 2 Sertifikasi Kemnaker</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Teknisi &amp; Supervisi <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-elevator-kemnaker/">Pelatihan K3 Elevator &amp; Eskalator Kemnaker RI</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-teknisi-listrik/">Pelatihan K3 Teknisi Listrik Sertifikasi Kemnaker</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-scaffolding-sertifikasi-kemnaker-ri/">Pelatihan K3 Scaffolding Sertifikasi Kemnaker RI</a></li>
+                  <li><a href="#" style="font-weight:600;color:var(--text2);">Pelatihan K3 Confined Space</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/k3-confined-space/">&nbsp;&nbsp;Pelatihan K3 Confined Space</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-gas-detector-bersertifikasi-kemnaker/">&nbsp;&nbsp;Pelatihan K3 Gas Detector</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Pelatihan Non-Kemnaker -->
+          <li>
+            <a href="#">Pelatihan Non-Kemnaker <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li>
+                <a href="#">Pelatihan K3 BNSP <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-ahli-k3-umum-bnsp/">Pelatihan Ahli K3 Umum BNSP</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-ketinggian-bnsp/">Pelatihan K3 Ketinggian BNSP</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Pelatihan Rescue <i class="fa fa-chevron-right"></i></a>
+                <ul class="sub-sub-menu">
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-diagonal-rescue/">Pelatihan K3 Diagonal Rescue</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-horizontal-rescue/">Pelatihan K3 Horizontal Rescue</a></li>
+                  <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-vertical-rescue/">Pelatihan K3 Vertical Rescue</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Webinar K3 -->
+          <li>
+            <a href="#">Webinar K3 <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li><a href="https://pelatihank3kemenaker.com/webinar-k3/">WEBINAR</a></li>
+              <li><a href="https://pelatihank3kemenaker.com/recording-webinar-k3/">Recording Webinar Mandiri Maha Daya</a></li>
+            </ul>
+          </li>
+
+          <!-- Blog K3 -->
+          <li><a href="https://pelatihank3kemenaker.com/blog-k3/">Blog K3</a></li>
+
+          <!-- Promo -->
+          <li>
+            <a href="#">Promo Pelatihan <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li><a href="https://pelatihank3kemenaker.com/jadwal-pelatihan-sertifikasi-k3/">Schedule Pelatihan</a></li>
+              <li><a href="https://pelatihank3kemenaker.com/penawaran-harga-terbaik-pelatihan-k3/">Promo Best Deals!!</a></li>
+            </ul>
+          </li>
+
+          <!-- Dokumen -->
+          <li>
+            <a href="#">Dokumen <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li><a href="https://pelatihank3kemenaker.com/cek-dokumen-k3/">CEK DOKUMEN K3</a></li>
+              <li><a href="https://pelatihank3kemenaker.com/dokumen-bidang-k3/">DOKUMEN K3</a></li>
+            </ul>
+          </li>
+
+          <!-- About Us -->
+          <li>
+            <a href="#">About Us <i class="fa fa-chevron-down"></i></a>
+            <ul class="sub-menu">
+              <li><a href="https://pelatihank3kemenaker.com/about-us/">About Us</a></li>
+              <li><a href="https://pelatihank3kemenaker.com/contacts/">Contact</a></li>
+              <li><a href="mailto:marketing@mandirimahadaya.co.id">marketing@mandirimahadaya.co.id</a></li>
+              <li><a href="tel:02122910842">Hotline : (021) 2291 0842</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Right -->
+      <div class="header-right">
+        <a href="https://pelatihank3kemenaker.com/formulir-pendaftaran-training/" class="btn-daftar">Daftar Pelatihan</a>
+        <div class="search-wrap"><i class="fa fa-search"></i> Search</div>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <strong class="welcome-txt">Selamat Datang,</strong>
+        <h1>Pelatihan K3 Bersertifikat, Untuk <span class="hl">Keselamatan yang Lebih Pasti</span></h1>
+        <p class="hero-desc">Mandiri Maha Daya adalah PJK3 yang menyediakan jasa pelatihan K3 resmi Kemnaker RI. Memiliki materi lengkap, instruktur berpengalaman, dan sertifikat resmi.</p>
+        <div class="hero-btns">
+          <a href="https://pelatihank3kemenaker.com/jadwal-pelatihan-sertifikasi-k3/" class="btn-hp"><i class="fa fa-calendar-alt"></i>Lihat Jadwal</a>
+          <a href="https://pelatihank3kemenaker.com/penawaran-harga-terbaik-pelatihan-k3/" class="btn-hs">Lihat Layanan Kami <i class="fa fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-trusted">
+          <p>dipercaya perusahaan</p>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <div class="num" data-target="50" data-suffix="K">0K</div>
+              <div class="lbl">Batch Terlaksana</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" data-target="500" data-suffix="+">0+</div>
+              <div class="lbl">Client puas</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" data-target="10" data-suffix="K">0K</div>
+              <div class="lbl">Sertifikat K3 telah terbit</div>
+            </div>
+            <div class="stat-box">
+              <div class="num" data-target="10" data-suffix="K">0K</div>
+              <div class="lbl">Sertifikat K3 telah terbit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img-main">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/logo-mandiri-maha-daya.webp"
+               alt="Pelatihan K3 Kemnaker"
+               style="background:rgba(255,255,255,.06);padding:30px;height:220px;object-fit:contain;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LAYANAN ===== -->
+<section id="layanan">
+  <div class="container">
+    <div class="layanan-head">
+      <div>
+        <p class="sec-label">Layanan Kami</p>
+        <h2 class="sec-title">Layanan Kami</h2>
+        <p class="sec-desc">Mandiri Maha Daya menyediakan pelatihan dan sertifikasi K3 bersertifikat Kemnaker RI. Mulai dari <a href="https://pelatihank3kemenaker.com/pelatihan-ak3u/" style="color:var(--yellow2);font-weight:600;">sertifikasi Ahli K3 Umum</a> hingga <a href="https://pelatihank3kemenaker.com/pelatihan-p3k/" style="color:var(--yellow2);font-weight:600;">P3K</a>.</p>
+      </div>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">🩺</div>
+        <h3>Pelatihan Petugas P3K</h3>
+        <p>Semua pekerja harus memiliki lisensi pertolongan pertama atau P3K supaya bisa membantu rekan kerja saat terjadi kecelakaan kerja.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-p3k/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👷</div>
+        <h3>Pelatihan Ahli K3 Umum</h3>
+        <p>Pelatihan ahli k3 umum ditujukan untuk orang-orang yang ingin mengembangkan karirnya menjadi seorang HSE di perusahaan.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-ak3u/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Pelatihan TKBT Tingkat 2</h3>
+        <p>Pekerja yang bekerja di bangunan tinggi harus memiliki sertifikat K3 Ketinggian supaya aman dan selamat selama bekerja.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-tkbt-2/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧗</div>
+        <h3>Pelatihan TKPK 1, 2 &amp; 3</h3>
+        <p>Pelatihan TKPK ditujukan untuk pekerja yang bekerja pada ketinggian untuk jenis Pekerjaan dan bangunan tertentu.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-tkpk-1/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Pelatihan Operator Gondola</h3>
+        <p>Seorang operator gondola harus memiliki SIO dan sertifikat K3 untuk bisa mengoperasikan gondola gedung.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-operator-gondola-kemnaker-ri/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛗</div>
+        <h3>Pelatihan Teknisi Elevator</h3>
+        <p>Operator dan teknisi elevator &amp; eskalator harus memiliki sertifikat K3 dan SIO Kemnaker untuk mengoperasikannya.</p>
+        <a href="https://pelatihank3kemenaker.com/pelatihan-k3-elevator-dan-eskalator/" class="service-link">Daftar <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Trainer Image -->
+    <div class="trainer-img">
+      <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/trainer-sedang-memberikan-materi-ke-peserta.jpg"
+           alt="Trainer sedang memberikan materi ke peserta"
+           onerror="this.parentElement.style.display='none'">
+    </div>
+
+    <div class="layanan-actions">
+      <a href="https://pelatihank3kemenaker.com/wp-content/uploads/2024/09/Jadwal-pelatihan-kemnaker-2024.pdf" class="btn-y"><i class="fa fa-calendar"></i>Lihat Jadwal</a>
+      <a href="https://pelatihank3kemenaker.com/pelatihan-ak3u/" class="btn-on">Lihat Pelatihan Lainnya <i class="fa fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KENAPA KAMI ===== -->
+<section id="kenapa">
+  <div class="container">
+    <div class="kenapa-grid">
+      <div>
+        <p class="sec-label"><strong>Apa Kelebihan Kami?</strong></p>
+        <h2 class="sec-title">Kenapa Harus Memilih Kami?</h2>
+        <p class="sec-desc">Sebagai PJK3 resmi yang ditunjuk langsung oleh Kementerian Ketenagakerjaan Republik Indonesia (KEMNAKER RI) memiliki SKP sehingga anda akan mendapatkan sertifikat yang resmi.</p>
+        <div class="kenapa-features">
+          <div class="feat-box">
+            <h4><a href="#">Memiliki SKP</a></h4>
+            <p>SKP menunjukan bahwa kami adalah PJK3 yang resmi dan terdaftar di Kemnaker RI.</p>
+          </div>
+          <div class="feat-box">
+            <h4><a href="#">Resmi Kemnaker RI</a></h4>
+            <p>Anda akan mendapatkan sertifikat K3 resmi dari Kemnaker RI.</p>
+          </div>
+          <div class="feat-box">
+            <h4><a href="#">Banyak Promo</a></h4>
+            <p>Selalu cek website kami karena akan selalu ada promo menarik buat anda.</p>
+          </div>
+          <div class="feat-box">
+            <h4><a href="#">Jaminan Lulus 100%</a></h4>
+            <p>Anda akan mendapatkan jaminan lulus 100% *S&amp;K berlaku.</p>
+          </div>
+        </div>
+      </div>
+      <div class="kenapa-right">
+        <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/peserta-diajarkan-cara-mengikat-tali-simpul.jpg"
+             alt="peserta diajarkan cara mengikat tali simpul"
+             onerror="this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA STRIP ===== -->
+<div class="cta-strip">
+  <div class="container">
+    <div class="cta-inner">
+      <h2><a href="https://pelatihank3kemenaker.com/formulir-pendaftaran-training/">Punya banyak pertanyaan? Konsultasikan gratis di sini yuk!</a></h2>
+      <a href="https://pelatihank3kemenaker.com/formulir-pendaftaran-training/" class="btn-n"><i class="fa fa-comments"></i>Konsultasi</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MANFAAT ===== -->
+<section id="manfaat">
+  <div class="container">
+    <div class="manfaat-grid">
+      <div class="manfaat-img">
+        <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/peserta-diajarkan-cara-mengikat-tali-simpul.jpg"
+             alt="peserta diajarkan cara mengikat tali simpul"
+             onerror="this.style.display='none'">
+      </div>
+      <div>
+        <h2 class="sec-title">Dapatkan banyak manfaat dari pelatihan K3!</h2>
+        <p class="sec-desc">Selain <a href="https://pelatihank3kemenaker.com/artikel-terbaru/cara-mendapatkan-sertifikat-k3/" style="color:var(--yellow2);font-weight:600;">mendapatkan sertifikat K3</a> resmi dari Kemnaker RI, anda juga akan mendapatkan banyak manfaat setelah mengikuti pelatihan K3.</p>
+        <div class="manfaat-list">
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Mengurangi Kecelakaan Kerja</a></div>
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Meningkatkan produktivitas kerja</a></div>
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Mengembangkan budaya K3</a></div>
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Dapat bekerja dengan aman</a></div>
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Mengurangi absen akibat kecelakaan kerja</a></div>
+          <div class="manfaat-item"><div class="chk">✓</div><a href="#">Mendapatkan jabatan lebih tinggi</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-thumb">🎥<div class="play-btn"><i class="fa fa-play"></i></div></div>
+        <div class="video-label">Intip keseruan training TKPK 1.</div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">🎥<div class="play-btn"><i class="fa fa-play"></i></div></div>
+        <div class="video-label">Simak keseruan kami di training P3K.</div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">🎥<div class="play-btn"><i class="fa fa-play"></i></div></div>
+        <div class="video-label">Lihat keseruan pelatihan operator gondola.</div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">🎙️<div class="play-btn"><i class="fa fa-play"></i></div></div>
+        <div class="video-label">Ikuti juga podcast kami di youtube yang membahas seputas K3.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONI ===== -->
+<section id="testimoni">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="sec-title">Apa Kata Mereka</h2>
+      <div class="g-header">
+        <div class="g-ball">G</div>
+        <span class="g-text">Jasa Pelatihan K3 Kemnaker - PT Mandiri Maha Daya &nbsp;&nbsp; <strong>652 Google reviews</strong></span>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">SERTIFIKASI TKPK 1 KEMNAKER.. banyak pengalaman yang saya dapat .. terimakasi. MANTAP</p>
+        <div class="review-foot"><div class="r-avatar">A</div><div><div class="r-name">Abboy sebastian76</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Terimakasih kepada PT. Mandiri Maha daya sudah mengajarkan pelatihan mantap mantapp</p>
+        <div class="review-foot"><div class="r-avatar">F</div><div><div class="r-name">Fajar Sidiq</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">terimakasih kepada Pt.Mandiri maha daya telah mengajarkan pelatihan</p>
+        <div class="review-foot"><div class="r-avatar">Y</div><div><div class="r-name">Yana Suryana</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Terimakasih Pt mandiri maha daya atas pembinaan nya</p>
+        <div class="review-foot"><div class="r-avatar">W</div><div><div class="r-name">Wahyudin Wahudin</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Terima kasih PT .mandiri maha kaya atas pelatihan'nya .</p>
+        <div class="review-foot"><div class="r-avatar">J</div><div><div class="r-name">Jejen Jejen</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">terimakasi kepada PT Mmd, yg sudah memberikan pengarahan terhadap kami semua, atas ilmu nya.</p>
+        <div class="review-foot"><div class="r-avatar">T</div><div><div class="r-name">Totong Jaelani</div><div class="r-src">Trustindex verifies that the original source of the review is Google.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLIENTS ===== -->
+<section id="clients">
+  <div class="container">
+    <div class="sec-center">
+      <h2 class="sec-title">Client yang percaya dengan kami</h2>
+      <p class="sec-desc" style="margin:0 auto;">Mandiri Maha Daya telah dipercaya oleh ratusan perusahaan besar dari berbagai bidang di Indonesia.</p>
+    </div>
+    <div class="clients-logos">
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/unilever-vector-logo.png" alt="logo unilever berwarna biru"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/Logo_PLN.png" alt="logo pln"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-kominfo.png" alt="logo kominfo"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/telkom-indonesia-logo.png" alt="logo telkom indonesia"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-huawei.webp" alt="logo huawei"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-sinarmas.png" alt="logo sinarmas"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-bpbd.png" alt="logo bpbd"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/sucofindo.png" alt="logo sucofindo"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-waskita.png" alt="logo waskita"></div>
+      <div class="client-logo"><img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/logo-trakindo-cat.png" alt="logo trakindo cat"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BOTTOM ===== -->
+<section id="cta-bottom">
+  <div class="container">
+    <h2>Jadilah pelopor keselamatan di tempat kerjamu!</h2>
+    <p>Daftar pelatihan k3 sekarang, dapatkan sertifikat K3 dan terapkan keselamatan di tempat kerjamu.</p>
+    <a href="https://pelatihank3kemenaker.com/formulir-pendaftaran-training/" class="btn-y" style="font-size:15px;padding:14px 32px;display:inline-flex;margin:0 auto;">
+      <i class="fa fa-phone"></i>Hubungi Kami Sekarang!
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand Col -->
+      <div>
+        <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/logo-mandiri-maha-daya.webp"
+             alt="logo mandiri maha daya"
+             class="footer-logo-img">
+        <div class="footer-contacts">
+          <div class="footer-contact-row"><i class="fa fa-map-marker-alt"></i><span>Alamat: sebrang KONI, Jl. Gelatik Raya No.107, Depok Jaya, Kec. Pancoran Mas, Kota Depok, Jawa Barat 16432</span></div>
+          <div class="footer-contact-row"><i class="fa fa-phone"></i><span>Phone: (021) 2291 0842</span></div>
+          <div class="footer-contact-row"><i class="fa fa-envelope"></i><span>Email: marketing@mandirimahadaya.co.id</span></div>
+        </div>
+      </div>
+
+      <!-- Layanan Col -->
+      <div class="footer-col">
+        <h4>Layanan Kami</h4>
+        <ul>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-ak3u/">Pelatihan Ahli K3 Umum</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkpk-1/">Pelatihan TKPK 1,2 &amp; 3</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-tkbt-2/">Pelatihan TKBT 1 &amp; 2</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-p3k/">Pelatihan Petugas P3K</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-operator-gondola-kemnaker-ri/">Pelatihan Operator Gondola</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-elevator-dan-eskalator/">Pelatihan K3 Elevator</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-teknisi-lisrik-kemnaker/">Peltihan Teknisi K3 Listrik</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-scaffolding-sertifikasi-kemnaker-ri/">Pelatihan K3 Perancah</a></li>
+          <li><a href="https://pelatihank3kemenaker.com/pelatihan-k3-confined-space-kemnaker/">Pelatihan K3 Confined Space</a></li>
+        </ul>
+      </div>
+
+      <!-- Informasi Col -->
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="https://pelatihank3kemenaker.com/blog/">Blog K3</a></li>
+          <li><a href="#">SKP</a></li>
+          <li><a href="#">Webinar K3</a></li>
+          <li><a href="#">Jadwal Pelatihan</a></li>
+        </ul>
+      </div>
+
+      <!-- Terdaftar Col -->
+      <div class="footer-col">
+        <h4>Kami Terdaftar di</h4>
+        <div style="margin-bottom:16px;">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/kemnaker.png"
+               alt="logo kemnaker Indonesia"
+               class="footer-reg"
+               onerror="this.outerHTML='<span style=\'font-size:12px;opacity:.55;\'>Kemnaker RI</span>'">
+        </div>
+
+        <h4>Kunjungi Juga</h4>
+        <div style="margin-bottom:16px;">
+          <a href="https://mandirimahadaya.co.id/">
+            <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/08/logo-mandiri-maha-daya.webp"
+                 alt="logo mandiri maha daya"
+                 class="footer-visit">
+          </a>
+        </div>
+
+        <h4>Partner Kami</h4>
+        <div class="footer-partners">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/alpk3.png"
+               alt="Partner ALPK3 Indonesia"
+               onerror="this.outerHTML='<span style=\'font-size:11px;opacity:.5;\'>ALPK3</span>'">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/komunitas-elevator.png"
+               alt="logo Komunitas Elevator Indonesia"
+               onerror="this.outerHTML='<span style=\'font-size:11px;opacity:.5;\'>Elevator</span>'">
+          <img src="https://pelatihank3kemenaker.com/wp-content/uploads/2024/06/arai.png"
+               alt="Komunitas ARAI Indonesia"
+               onerror="this.outerHTML='<span style=\'font-size:11px;opacity:.5;\'>ARAI</span>'">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>Copyright &copy; 2024 - PT Mandiri Maha Daya</span>
+      <span>PJK3 Resmi Kemnaker RI</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/6221229108422" class="wa-float" target="_blank" title="Chat WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// Counter animation on scroll
+function animateCount(el){
+  const target=parseInt(el.dataset.target)||0;
+  const suffix=el.dataset.suffix||'';
+  let cur=0;
+  const step=Math.max(1,Math.ceil(target/60));
+  const timer=setInterval(()=>{
+    cur+=step;
+    if(cur>=target){cur=target;clearInterval(timer);}
+    el.textContent=cur+suffix;
+  },30);
+}
+
+const counters=document.querySelectorAll('.stat-box .num[data-target]');
+let animated=false;
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&!animated){
+      animated=true;
+      counters.forEach(c=>animateCount(c));
+    }
+  });
+},{threshold:.3});
+if(counters.length)observer.observe(counters[0].closest('section')||counters[0]);
+
+// Mobile menu
+document.getElementById('menuToggle').addEventListener('click',function(){
+  const nav=document.getElementById('primary-nav');
+  nav.classList.toggle('open');
+});
+</script>
+</body>
+</html>
